@@ -330,14 +330,78 @@ npm test
 
 ## 📦 Deployment
 
-### Frontend (Vercel/Netlify)
+### 🚀 Quick Deploy to Render (Recommended)
+
+#### Option 1: One-Click Deploy (Using render.yaml)
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Prepare for deployment"
+   git push origin main
+   ```
+
+2. **Connect to Render**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New" → "Blueprint"
+   - Connect your GitHub repository
+   - Render will auto-detect `render.yaml` and create both services
+
+3. **Configure Environment Variables**
+   - **Backend Service** → Environment:
+     - `MONGODB_URI`: Your MongoDB Atlas connection string
+     - `JWT_SECRET`: (Auto-generated or set your own)
+   - **Frontend Service** → Environment:
+     - `VITE_API_URL`: Your backend URL + `/api` (e.g., `https://edurecruit-backend.onrender.com/api`)
+     - `VITE_BACKEND_URL`: Your backend URL (e.g., `https://edurecruit-backend.onrender.com`)
+
+#### Option 2: Manual Deploy
+
+**Backend Deployment:**
+1. New Web Service → Connect Repository
+2. **Settings:**
+   - **Build Command:** `cd backend && npm install`
+   - **Start Command:** `cd backend && npm start`
+   - **Environment Variables:**
+     ```
+     MONGODB_URI=mongodb+srv://...
+     JWT_SECRET=your_super_secret_jwt_key
+     PORT=5000
+     NODE_VERSION=18.18.0
+     ```
+3. Deploy!
+
+**Frontend Deployment:**
+1. New Static Site → Connect Repository
+2. **Settings:**
+   - **Build Command:** `cd frontend && npm install && npm run build`
+   - **Publish Directory:** `frontend/dist`
+   - **Environment Variables:**
+     ```
+     VITE_API_URL=https://your-backend.onrender.com/api
+     VITE_BACKEND_URL=https://your-backend.onrender.com
+     ```
+3. Deploy!
+
+### 🔧 MongoDB Atlas Setup
+1. Create free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
+2. **Security:**
+   - Database Access → Add user (save credentials)
+   - Network Access → Add `0.0.0.0/0` (allow all IPs)
+3. Connect → Get connection string → Replace `<password>` and `<dbname>`
+
+### 🌐 Alternative Hosting Options
+
+#### Frontend (Vercel/Netlify)
 ```bash
 cd frontend
 npm run build
 # Deploy dist/ folder
 ```
+**Environment Variables:**
+- `VITE_API_URL`: Your backend API URL + `/api`
+- `VITE_BACKEND_URL`: Your backend URL
 
-### Backend (Render/Railway)
+#### Backend (Railway/Heroku)
 ```bash
 # Set environment variables:
 # - MONGODB_URI
@@ -345,10 +409,24 @@ npm run build
 # - PORT
 ```
 
-### Database (MongoDB Atlas)
-1. Create free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
-2. Whitelist IP addresses
-3. Get connection string
+### ⚠️ Important Notes
+- **Free Tier Limitations:** Render free tier services spin down after 15 minutes of inactivity (first request may take 30-60 seconds)
+- **CORS:** Backend already configured for all origins in development. For production, update CORS in `server.js`:
+  ```javascript
+  app.use(cors({ origin: 'https://your-frontend-url.com' }));
+  ```
+- **File Uploads:** Render's free tier doesn't persist uploaded files. Consider using:
+  - [Cloudinary](https://cloudinary.com/) for resume uploads
+  - AWS S3 / Azure Blob Storage
+
+### 📊 Post-Deployment
+1. **Seed Demo Data:** Run seeder on backend
+   ```bash
+   # In Render Shell or locally connected to production DB
+   node seed.js
+   ```
+2. **Test Login:** Use demo credentials from README
+3. **Monitor:** Check Render logs for errors
 
 ---
 

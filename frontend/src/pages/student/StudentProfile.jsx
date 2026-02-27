@@ -13,6 +13,8 @@ import {
   HiOutlinePencil
 } from 'react-icons/hi';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const StudentProfile = () => {
   const { user } = useAuth();
   const [profile, setProfile] = useState(null);
@@ -162,7 +164,7 @@ const StudentProfile = () => {
             {profile?.resumeUrl ? (
               <div className="space-y-3">
                 <a
-                  href={`http://localhost:5000${profile.resumeUrl}`}
+                  href={`${BACKEND_URL}${profile.resumeUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl bg-success/10 border border-success/20 text-success hover:bg-success/20 transition-colors"
