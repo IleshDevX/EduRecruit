@@ -41,6 +41,20 @@ EduRecruit digitizes the entire workflow with:
 - Real-time application status tracking
 - Comprehensive analytics for placement insights
 
+## 🔄 Version Timeline (UI Iterations)
+
+| Version | Branch | Pull Request | Key UI/UX Changes |
+|---------|--------|--------------|-------------------|
+| v1.0 | `main` | Base state | Initial project baseline pushed as starting version |
+| v1.1 | `feature/ui-update-1` | #1 | Refined color palette, typography hierarchy, and spacing on landing page |
+| v1.2 | `feature/ui-update-2` | #2 | Added new `SuccessStories` component section to landing page |
+| v1.3 | `feature/ui-update-3` | #3 | Improved mobile responsiveness and added subtle motion effects |
+
+### Workflow Notes
+- Each UI version was implemented on its own branch and merged via pull request.
+- Release tags created and pushed: `v1.0`, `v1.1`, `v1.2`, `v1.3`.
+- Fork workflow demonstration: completed with a small docs change from fork and a PR to upstream.
+
 ---
 
 ## ✨ Features
