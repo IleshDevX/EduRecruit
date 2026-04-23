@@ -60,6 +60,8 @@ const stats = [
   { value: '95%', label: 'Success Rate' },
 ];
 
+const floatDelays = ['', 'animate-float-delay-1', 'animate-float-delay-2', 'animate-float-delay-1'];
+
 const Landing = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -110,11 +112,11 @@ const Landing = () => {
                 <HiOutlineLightningBolt className="w-4 h-4" />
                 Campus Recruitment Platform
               </span>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark leading-tight mb-7">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-dark leading-tight mb-7">
                 Transform Your
                 <span className="text-primary"> Campus Placements</span>
               </h1>
-              <p className="text-lg text-maintext mb-10 max-w-2xl">
+              <p className="text-base sm:text-lg text-maintext mb-10 max-w-2xl">
                 EduRecruit connects students with leading employers through a streamlined, 
                 transparent recruitment process. Track applications, manage eligibility, 
                 and secure your future — all in one powerful platform.
@@ -122,14 +124,14 @@ const Landing = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   to="/register"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/25 transition-all group"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/25 transition-all group btn-glow"
                 >
                   Start Free
                   <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/login"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-dark rounded-xl font-semibold text-lg border-2 border-border hover:border-primary hover:text-primary transition-all"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-white text-dark rounded-xl font-semibold text-lg border-2 border-border hover:border-primary hover:text-primary transition-all"
                 >
                   Sign In
                 </Link>
@@ -141,7 +143,7 @@ const Landing = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -149,7 +151,7 @@ const Landing = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg shadow-dark/5 border border-border hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className={`bg-white rounded-2xl p-5 lg:p-6 shadow-lg shadow-dark/5 border border-border hover:shadow-xl hover:-translate-y-1 transition-all animate-float-card ${floatDelays[index]}`}
                 >
                   <p className="text-3xl lg:text-4xl font-bold text-primary mb-1">{stat.value}</p>
                   <p className="text-sm text-maintext font-medium">{stat.label}</p>
@@ -171,7 +173,7 @@ const Landing = () => {
             className="text-center mb-14 lg:mb-16"
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Features</span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
               Everything You Need to Succeed
             </h2>
             <p className="text-maintext max-w-2xl mx-auto text-lg">
@@ -212,7 +214,7 @@ const Landing = () => {
             className="text-center mb-14 lg:mb-16"
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Process</span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
               Simple & Streamlined
             </h2>
             <p className="text-maintext max-w-2xl mx-auto text-lg">
@@ -254,7 +256,7 @@ const Landing = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">
               Ready to Transform Your Recruitment?
             </h2>
             <p className="text-white/70 mb-10 max-w-2xl mx-auto text-lg">
@@ -264,14 +266,14 @@ const Landing = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/register"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-light hover:shadow-xl transition-all group"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-light hover:shadow-xl transition-all group btn-glow"
               >
                 Create Free Account
                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-white/10 text-white rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all"
               >
                 Sign In
               </Link>
