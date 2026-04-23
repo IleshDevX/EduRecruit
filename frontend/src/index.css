@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 /* ============================================
@@ -7,30 +8,30 @@
 
 @theme {
   /* Primary Brand Colors */
-  --color-primary: #0F766E;
-  --color-primary-light: #14B8A6;
-  --color-primary-dark: #0D5D56;
+  --color-primary: #0B6E99;
+  --color-primary-light: #2EA5D8;
+  --color-primary-dark: #084F70;
   
   /* Secondary & Accent */
-  --color-secondary: #6366F1;
-  --color-accent: #8B5CF6;
+  --color-secondary: #E9A13C;
+  --color-accent: #E76F51;
   
   /* Surfaces */
   --color-surface: #FFFFFF;
-  --color-background: #F8FAFC;
+  --color-background: #F4F7FC;
   --color-card: #FFFFFF;
-  --color-sidebar: #0F172A;
-  --color-sidebar-hover: #1E293B;
+  --color-sidebar: #102237;
+  --color-sidebar-hover: #19324D;
   
   /* Text Hierarchy */
   --color-dark: #0F172A;
-  --color-maintext: #64748B;
-  --color-muted: #94A3B8;
+  --color-maintext: #51657A;
+  --color-muted: #7C8FA3;
   --color-white: #FFFFFF;
   
   /* Borders */
-  --color-border: #E2E8F0;
-  --color-border-light: #F1F5F9;
+  --color-border: #D6E0EB;
+  --color-border-light: #EAF0F7;
   
   /* Status Colors */
   --color-success: #10B981;
@@ -51,12 +52,23 @@
 
 /* Base Styles */
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: var(--color-dark);
   background-color: var(--color-background);
   margin: 0;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sora', 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.015em;
 }
 
 /* Custom Scrollbar */
@@ -91,7 +103,7 @@ body {
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #F8FAFC 0%, #E0F2FE 50%, #F0FDFA 100%);
+  background: linear-gradient(135deg, #F3F8FF 0%, #DEEEF9 50%, #F8FCFF 100%);
 }
 
 /* Card Hover Effect */

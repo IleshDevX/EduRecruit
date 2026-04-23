@@ -61,10 +61,10 @@ const stats = [
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
               <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -97,28 +97,28 @@ const Landing = () => {
         <div className="absolute inset-0 gradient-hero"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwRjc2NkUiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
         
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 lg:py-28 xl:py-32">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-7">
                 <HiOutlineLightningBolt className="w-4 h-4" />
                 Campus Recruitment Platform
               </span>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark leading-tight mb-6">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark leading-tight mb-7">
                 Transform Your
                 <span className="text-primary"> Campus Placements</span>
               </h1>
-              <p className="text-lg text-maintext mb-8 max-w-xl">
+              <p className="text-lg text-maintext mb-10 max-w-2xl">
                 EduRecruit connects students with leading employers through a streamlined, 
                 transparent recruitment process. Track applications, manage eligibility, 
                 and secure your future — all in one powerful platform.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   to="/register"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/25 transition-all group"
@@ -160,14 +160,14 @@ const Landing = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-center mb-14 lg:mb-16"
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Features</span>
             <h2 className="text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
@@ -178,7 +178,7 @@ const Landing = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -186,7 +186,7 @@ const Landing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white rounded-2xl p-7 lg:p-8 border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                   <feature.icon className="w-7 h-7" />
@@ -200,13 +200,13 @@ const Landing = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-14 lg:mb-16"
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Process</span>
             <h2 className="text-3xl lg:text-4xl font-bold text-dark mt-3 mb-4">
@@ -217,7 +217,7 @@ const Landing = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-6 lg:gap-8">
             {[
               { step: '01', title: 'Register', desc: 'Create your profile as a student or recruiter' },
               { step: '02', title: 'Apply', desc: 'Students apply to jobs matching their profile' },
@@ -244,7 +244,7 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-sidebar">
+      <section className="py-20 lg:py-24 bg-sidebar">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -278,7 +278,7 @@ const Landing = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-border py-12">
+      <footer className="bg-white border-t border-border py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
