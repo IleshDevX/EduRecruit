@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SuccessStories from '../components/SuccessStories';
 import { 
   HiOutlineAcademicCap, 
   HiOutlineBriefcase, 
@@ -198,6 +199,8 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+      <SuccessStories />
 
       {/* How It Works Section */}
       <section className="py-20 lg:py-24">
